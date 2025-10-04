@@ -5,9 +5,9 @@ import tasksData from "../assets/tasks.json";
 import usersData from "../assets/users.json";
 
 const DATA_MAP = {
-  pr: prData,
-  tasks: tasksData,
-  users: usersData,
+  "api/pr": prData,
+  "api/tasks": tasksData,
+  "api/users": usersData,
 };
 
 const useDataFetcher = (dataKey, intervalTime) => {
