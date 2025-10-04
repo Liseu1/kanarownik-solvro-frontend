@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Zadanie",
+    "description": null,
+    "dueDate": null,
+    "createdAt": "2025-10-04T15:08:17.616Z",
+    "updatedAt": "2025-10-04T15:08:17.616Z"
+  },
+  {
+    "id": 2,
+    "title": "Zadanooooo",
+    "description": "Opis",
+    "dueDate": "2025-10-04T15:08:17.616Z",
+    "createdAt": "2025-10-04T15:08:17.616Z",
+    "updatedAt": "2025-10-04T15:08:17.616Z"
+  }
+]

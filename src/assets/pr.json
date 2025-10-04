@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "task": {
+      "id": 1,
+      "title": "Zadanie",
+      "description": null,
+      "dueDate": "",
+      "createdAt": "2025-10-04T15:08:17.616Z",
+      "updatedAt": "2025-10-04T15:08:17.616Z"
+    },
+    "assignee": {
+      "githubId": 2,
+      "assignedReviewerId": 1,
+      "assignedReviewerUsername": "Lorem",
+      "username": "Ipsum",
+      "name": "Tomasz",
+      "lastName": "Problem",
+      "isActive": true,
+      "role": "participant"
+    },
+    "createdBy": {
+      "githubId": 2,
+      "assignedReviewerId": 1,
+      "assignedReviewerUsername": "Lorem",
+      "username": "Ipsum",
+      "name": "Tomasz",
+      "lastName": "Problem",
+      "isActive": true,
+      "role": "participant"
+    },
+    "reviewer": {
+      "githubId": 1,
+      "assignedReviewerId": null,
+      "assignedReviewerUsername": null,
+      "username": "Lorem",
+      "name": "Jan",
+      "lastName": "Kowalski",
+      "isActive": true,
+      "role": "reviewer"
+    },
+    "githubCreatedAt": "2025-10-04T15:08:17.616Z",
+    "githubUpdatedAt": "2025-10-04T15:08:17.616Z",
+    "githubMergedAt": "2025-10-04T15:08:17.616Z",
+    "status": "open"
+  },
+  {
+    "id": 2,
+    "task": {
+      "id": 1,
+      "title": "Zadanie",
+      "description": null,
+      "dueDate": "",
+      "createdAt": "2025-10-04T15:08:17.616Z",
+      "updatedAt": "2025-10-04T15:08:17.616Z"
+    },
+    "assignee": {
+      "githubId": 2,
+      "assignedReviewerId": 1,
+      "assignedReviewerUsername": "Lorem",
+      "username": "Ipsum",
+      "name": "Tomasz",
+      "lastName": "Problem",
+      "isActive": true,
+      "role": "participant"
+    },
+    "createdBy": {
+      "githubId": 2,
+      "assignedReviewerId": 1,
+      "assignedReviewerUsername": "Lorem",
+      "username": "Ipsum",
+      "name": "Tomasz",
+      "lastName": "Problem",
+      "isActive": true,
+      "role": "participant"
+    },
+    "reviewer": {
+      "githubId": 1,
+      "assignedReviewerId": null,
+      "assignedReviewerUsername": null,
+      "username": "Lorem",
+      "name": "Jan",
+      "lastName": "Kowalski",
+      "isActive": true,
+      "role": "reviewer"
+    },
+    "githubCreatedAt": "2025-10-04T15:08:17.616Z",
+    "githubUpdatedAt": "2025-10-04T15:08:17.616Z",
+    "githubMergedAt": "2025-10-04T15:08:17.616Z",
+    "status": "open"
+  }
+]
