@@ -1,6 +1,8 @@
 import React from "react";
 
 import useDataFetcher from "../hooks/useDataFetcher";
+import CurrentTaskTile from "./CurrentTaskTile";
+import PullRequestsTile from "./PullRequestsTile";
 import Stats from "./Stats";
 
 const REFRESH_INTERVAL = 1800000;
@@ -45,14 +47,6 @@ const Dashboard = () => {
     );
   }
 
-  if (!Array.isArray(pullRequests) || pullRequests.length === 0) {
-    return (
-      <div className="error" style={{ padding: "50px" }}>
-        No data to display for Pull Requests.
-      </div>
-    );
-  }
-
   const totalPRs = pullRequests.length;
   const tasksAdded = taskCount.length;
 
@@ -61,6 +55,8 @@ const Dashboard = () => {
     (user) => user.isActive === true,
   ).length;
   const activeUsersValue = `${activeUsersCount} / ${totalUsers}`;
+
+  const currentTask = taskCount.length > 0 ? taskCount[0] : null;
 
   const statisticsData = [
     {
@@ -84,19 +80,22 @@ const Dashboard = () => {
   ];
 
   return (
-    <div>
+    <div className="Dashboard">
       <div className="DashboardGrid">
-        {statisticsData.map((stat) => (
-          <Stats
-            key={stat.id}
-            title={stat.title}
-            value={stat.value}
-            link={stat.link}
-          />
-        ))}
+        <div className="stats-container">
+          {statisticsData.map((stat) => (
+            <Stats
+              key={stat.id}
+              title={stat.title}
+              value={stat.value}
+              link={stat.link}
+            />
+          ))}
+        </div>
 
         <div className="RecentPullRequest">
-          <p>Recent pull request and current task</p>
+          <PullRequestsTile pullRequests={pullRequests} />
+          <CurrentTaskTile task={currentTask} />
         </div>
 
         <div className="NavigationTile">
