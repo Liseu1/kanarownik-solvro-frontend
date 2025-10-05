@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
+import funkyTownSound from "../funky-town.mp3";
 import useDataFetcher from "../hooks/useDataFetcher";
 import CurrentTaskTile from "./CurrentTaskTile";
 import PullRequestsTile from "./PullRequestsTile";
@@ -8,6 +9,25 @@ import Stats from "./Stats";
 const REFRESH_INTERVAL = 1800000;
 
 const Dashboard = () => {
+  const [isSpinning, setIsSpinning] = useState(false);
+
+  const audioRef = useRef(null);
+
+  const toggleSpin = () => {
+    setIsSpinning((prev) => {
+      const newState = !prev;
+
+      if (audioRef.current) {
+        if (newState) {
+          audioRef.current.play();
+        } else {
+          audioRef.current.pause();
+        }
+      }
+      return newState;
+    });
+  };
+
   const PR_KEY = "api/pr";
   const USERS_KEY = "api/users";
   const TASKS_KEY = "api/tasks";
@@ -81,6 +101,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+      <audio ref={audioRef} loop src={funkyTownSound} preload="auto" />
       <div className="dashboard-grid">
         <div className="stats-container">
           {statisticsData.map((stat) => (
@@ -98,11 +119,11 @@ const Dashboard = () => {
           <CurrentTaskTile task={currentTask} />
         </div>
 
-        <div className="navigation-tile">
+        <div className="navigation-tile" onClick={toggleSpin}>
           <img
             src="/src/majonez.gif"
             alt="Kanarkowe menu nawigacyjne"
-            className="navigation-image"
+            className={`navigation-image ${isSpinning ? "is-spinning" : ""}`}
           />
         </div>
       </div>

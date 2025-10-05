@@ -194,3 +194,28 @@
   height: 100%;
   object-fit: fill;
 }
+
+@keyframes funky-flip {
+  0% {
+    transform: perspective(400px) rotateY(0deg) scale(1);
+  }
+  25% {
+    transform: perspective(400px) rotateY(90deg) scale(0.95);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg) scale(1.05);
+  }
+  75% {
+    transform: perspective(400px) rotateY(270deg) scale(1);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg) scale(1);
+  }
+}
+
+.navigation-tile .is-spinning {
+  animation-name: funky-flip;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
