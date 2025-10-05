@@ -8,11 +8,9 @@ const PullRequestsTile = ({ pullRequests }) => {
   return (
     <div className="pull-requests-tile">
       <h2>Recent pull requests</h2>
-      <div className="pr-list">
-        {recentPRs.map((pr) => (
-          <PRRecord key={pr.id} pullRequest={pr} />
-        ))}
-      </div>
+      {recentPRs.map((pr) => (
+        <PRRecord key={pr.id} pullRequest={pr} />
+      ))}
     </div>
   );
 };

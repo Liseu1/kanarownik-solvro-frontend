@@ -80,8 +80,8 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="Dashboard">
-      <div className="DashboardGrid">
+    <div className="dashboard">
+      <div className="dashboard-grid">
         <div className="stats-container">
           {statisticsData.map((stat) => (
             <Stats
@@ -93,12 +93,12 @@ const Dashboard = () => {
           ))}
         </div>
 
-        <div className="RecentPullRequest">
+        <div className="center-column-stack">
           <PullRequestsTile pullRequests={pullRequests} />
           <CurrentTaskTile task={currentTask} />
         </div>
 
-        <div className="NavigationTile">
+        <div className="navigation-tile">
           <p>menu?</p>
         </div>
       </div>
