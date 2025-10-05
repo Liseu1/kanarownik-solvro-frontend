@@ -64,6 +64,12 @@ const Dashboard = () => {
 
   const statisticsData = [
     {
+      id: "active-users",
+      title: "Active Users",
+      value: activeUsersValue,
+      link: "/users?isActive=true",
+    },
+    {
       id: "stat-total-prs",
       title: "Pull Requests",
       value: totalPRs,
@@ -75,26 +81,26 @@ const Dashboard = () => {
       value: tasksAdded,
       link: "/tasks",
     },
-    {
-      id: "active-users",
-      title: "Active Users",
-      value: activeUsersValue,
-      link: "/users?isActive=true",
-    },
   ];
 
   return (
     <div>
-      <div className="dashboard-layout">
-        <div className="stats-container">
-          {statisticsData.map((stat) => (
-            <Stats
-              key={stat.id}
-              title={stat.title}
-              value={stat.value}
-              link={stat.link}
-            />
-          ))}
+      <div className="DashboardGrid">
+        {statisticsData.map((stat) => (
+          <Stats
+            key={stat.id}
+            title={stat.title}
+            value={stat.value}
+            link={stat.link}
+          />
+        ))}
+
+        <div className="RecentPullRequest">
+          <p>Recent pull request and current task</p>
+        </div>
+
+        <div className="NavigationTile">
+          <p>menu?</p>
         </div>
       </div>
     </div>

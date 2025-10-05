@@ -1,0 +1,64 @@
+.DashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 20px;
+  text-align: left;
+}
+.Stats {
+  grid-column: 1 / 2;
+  background-color: #475a6d;
+  color: #f0f0f0;
+  padding: 10px 10px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  height: fit-content;
+  text-align: center;
+}
+.Stats h3 {
+  color: #f5efeb;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.Stats p {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.Stats button {
+  background: none;
+  border: none;
+  color: #f5efeb;
+  text-decoration: underline;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 5px;
+  display: block;
+  transition: color 0.2s;
+}
+
+.Stats button:hover {
+  color: #fcf9f7;
+}
+
+.RecentPullRequest {
+  grid-column: 2 / 3;
+}
+
+.NavigationTile {
+  grid-column: 3 / 4;
+  background-color: #475a6d;
+  color: #f0f0f0;
+  padding: 20px;
+  border-radius: 2px;
+  align-self: stretch;
+  text-align: center;
+}

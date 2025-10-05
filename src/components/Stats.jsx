@@ -2,7 +2,7 @@ import React from "react";
 
 const Stats = ({ title, value }) => {
   return (
-    <div className="stats">
+    <div className="Stats">
       <h3>{title}</h3>
       <p>{value}</p>
       <button>View all</button>
