@@ -82,6 +82,10 @@
   border-radius: 2px;
   align-self: stretch;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pr-record {
@@ -183,4 +187,10 @@
 
 .task-footer button:hover {
   color: #dbeafe;
+}
+
+.navigation-tile .navigation-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }

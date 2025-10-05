@@ -99,7 +99,11 @@ const Dashboard = () => {
         </div>
 
         <div className="navigation-tile">
-          <p>menu?</p>
+          <img
+            src="/src/majonez.gif"
+            alt="Kanarkowe menu nawigacyjne"
+            className="navigation-image"
+          />
         </div>
       </div>
     </div>
