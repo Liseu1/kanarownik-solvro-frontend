@@ -1,14 +1,6 @@
 import { useEffect, useState } from "react";
 
-import prData from "../assets/pr.json";
-import tasksData from "../assets/tasks.json";
-import usersData from "../assets/users.json";
-
-const DATA_MAP = {
-  "api/pr": prData,
-  "api/tasks": tasksData,
-  "api/users": usersData,
-};
+const API_BASE_URL = "";
 
 const useDataFetcher = (dataKey, intervalTime) => {
   const [data, setData] = useState(null);
@@ -20,25 +12,47 @@ const useDataFetcher = (dataKey, intervalTime) => {
       setIsLoading(true);
       setError(null);
 
-      console.log(`FETCHING DATA FOR: ${dataKey}...`);
+      let endpoint;
+      switch (dataKey) {
+        case "api/pr":
+          endpoint = "/pull-request";
+          break;
+        case "api/tasks":
+          endpoint = "/task";
+          break;
+        case "api/users":
+          endpoint = "/user";
+          break;
+        default:
+          setError(`Unknown data key: ${dataKey}`);
+          setIsLoading(false);
+          return;
+      }
+
+      console.log(`FETCHING DATA FROM API: ${API_BASE_URL}${endpoint}...`);
 
       try {
-        if (!DATA_MAP[dataKey]) {
-          throw new Error(`Resource '${dataKey}' not found in DATA_MAP.`);
+        const response = await fetch(`${API_BASE_URL}${endpoint}`);
+
+        if (!response.ok) {
+          throw new Error(
+            `HTTP Error ${response.status}: ${response.statusText}`,
+          );
         }
 
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-
-        const result = DATA_MAP[dataKey];
+        const result = await response.json();
 
         setData(result);
       } catch (error) {
         console.error(`Data Fetch Error:`, error);
-        setError(error.message || "An unknown error occured");
+        setError(
+          error instanceof Error ? error.message : "An unknown error occurred.",
+        );
       } finally {
         setIsLoading(false);
       }
     };
+
     fetchData();
     const intervalId = setInterval(fetchData, intervalTime);
     return () => clearInterval(intervalId);
