@@ -53,7 +53,9 @@ const PRRecord = ({ pullRequest }) => {
           <UserIcon />@{reviewer?.username} (Reviewer)
         </span>
 
-        <span className={`pr-status status-${status}`}>{status}</span>
+        <span className={`pr-status status-${status?.toLowerCase()}`}>
+          {status}
+        </span>
       </div>
     </div>
   );

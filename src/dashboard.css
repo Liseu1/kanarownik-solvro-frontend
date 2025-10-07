@@ -146,6 +146,11 @@
   color: white;
 }
 
+.status-closed {
+  background-color: #ff0000;
+  color: white;
+}
+
 .current-task-tile .task-title {
   font-size: 1.25rem;
   font-weight: 600;
