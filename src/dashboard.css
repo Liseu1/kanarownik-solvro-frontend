@@ -1,0 +1,226 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 20px;
+  text-align: left;
+}
+.stats {
+  background-color: #475a6d;
+  color: #f0f0f0;
+  padding: 10px 10px;
+  border-radius: 2px;
+  height: fit-content;
+  text-align: center;
+}
+.stats h3 {
+  color: #f5efeb;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.stats p {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.stats button {
+  color: #93c5fd;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.stats button:hover {
+  color: #dbeafe;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.center-column-stack {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pull-requests-tile,
+.current-task-tile {
+  background-color: #475a6d;
+  color: #f0f0f0;
+  padding: 20px;
+  border-radius: 2px;
+  text-align: left;
+  min-height: 200px;
+}
+
+.pull-requests-tile h2,
+.current-task-tile h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f5efeb;
+}
+
+.navigation-tile {
+  grid-column: 3 / 4;
+  background-color: #475a6d;
+  color: #f0f0f0;
+  padding: 20px;
+  border-radius: 2px;
+  align-self: stretch;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pr-record {
+  padding: 8px 0;
+  border-bottom: 1px solid #5a6e82;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: background-color 0.2s;
+}
+
+.pr-record:last-child {
+  border-bottom: none;
+}
+
+.pr-record:hover {
+  background-color: #52657a;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0 -8px;
+}
+
+.pr-task-title {
+  font-weight: 600;
+  color: #f5efeb;
+  margin-bottom: 4px;
+}
+
+.pr-details {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #b0c0cf;
+  gap: 8px;
+}
+
+.pr-details .icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.pr-status {
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.status-open {
+  background-color: #10b981;
+  color: white;
+}
+
+.status-merged {
+  background-color: #8250df;
+  color: white;
+}
+
+.status-closed {
+  background-color: #ff0000;
+  color: white;
+}
+
+.current-task-tile .task-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.current-task-tile .task-description {
+  font-size: 0.9rem;
+  color: #b0c0cf;
+  margin-bottom: 1rem;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid #5a6e82;
+  font-size: 0.85rem;
+  color: #b0c0cf;
+}
+
+.task-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.task-footer button {
+  color: #93c5fd;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.task-footer button:hover {
+  color: #dbeafe;
+}
+
+.navigation-tile .navigation-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+@keyframes funky-flip {
+  0% {
+    transform: perspective(400px) rotateY(0deg) scale(1);
+  }
+  25% {
+    transform: perspective(400px) rotateY(90deg) scale(0.95);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg) scale(1.05);
+  }
+  75% {
+    transform: perspective(400px) rotateY(270deg) scale(1);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg) scale(1);
+  }
+}
+
+.navigation-tile .is-spinning {
+  animation-name: funky-flip;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

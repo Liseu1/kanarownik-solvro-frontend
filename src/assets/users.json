@@ -1,0 +1,32 @@
+[
+  {
+    "githubId": 1,
+    "assignedReviewerId": null,
+    "assignedReviewerUsername": null,
+    "username": "Lorem",
+    "name": "Jan",
+    "lastName": "Kowalski",
+    "isActive": true,
+    "role": "reviewer"
+  },
+  {
+    "githubId": 2,
+    "assignedReviewerId": 1,
+    "assignedReviewerUsername": "Lorem",
+    "username": "Ipsum",
+    "name": "Tomasz",
+    "lastName": "Problem",
+    "isActive": true,
+    "role": "participant"
+  },
+  {
+    "githubId": 3,
+    "assignedReviewerId": 1,
+    "assignedReviewerUsername": "Lorem",
+    "username": "Dolor",
+    "name": "Tytus",
+    "lastName": "Bomba",
+    "isActive": false,
+    "role": "participant"
+  }
+]
